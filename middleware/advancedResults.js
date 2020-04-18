@@ -45,7 +45,6 @@ const advancedResults = (model, populate) => async(req, res, next) => {
 
     if(populate){
         query = query.populate(populate);
-        console.log(query)
     }
   
     //Executing query
