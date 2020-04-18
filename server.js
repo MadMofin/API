@@ -27,6 +27,7 @@ const specialties = require("./routes/specialties");
 const doctors = require("./routes/doctors");
 const users = require("./routes/users");
 const auth = require("./routes/auth");
+const consults = require("./routes/consults");
 
 //Body Parser
 app.use(express.json());
@@ -85,6 +86,7 @@ app.use("/api/v1/specialties", specialties);
 app.use("/api/v1/doctors", doctors);
 app.use("/api/v1/users", users);
 app.use("/api/v1/auth", auth);
+app.use("/api/v1/consults", consults);
 
 app.use(errorHandler);
 
