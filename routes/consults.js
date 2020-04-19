@@ -28,6 +28,9 @@ router
     path: 'user',
     model: 'User'
   }]), getConsults)
+
+  router
+  .route("/:doctorId/:hospitalId")
   .post(protect, authorize("admin", "publisher"), createConsult);
 
 router

@@ -48,12 +48,18 @@ exports.getConsult = asyncHandler(async (req, res, next) => {
 });
 
 //@desc Add Consult
-//@route POST /api/v1/consult
+//@route POST /api/v1/consults/:doctorId/:hospitalId
 //@access Private
 exports.createConsult = asyncHandler(async (req, res, next) => {
 
   // Add user to req.body
   req.body.user = req.user.id;
+
+  // Add hospital to req.body
+  req.body.hospital = req.params.hospitalId;
+
+  // Add doctor to req.body
+  req.body.doctor = req.params.doctorId;
 
   // Check for published Consult
   const publishedConsult = await Consult.findOne({ user: req.user.id });
